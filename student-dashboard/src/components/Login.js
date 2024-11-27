@@ -19,15 +19,10 @@ const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount }) 
         setMessage('Passwords do not match');
         return;
       }
-      // Add account creation logic here
-      // If successful:
       setMessageType('success');
       setMessage('Account successfully created!');
-      // Navigate to login page after account creation
       setIsCreatingAccount(false);
     } else {
-      // Login logic here
-      // If successful:
       setIsAuthenticated(true);
       navigate('/dashboard');
     }
@@ -36,7 +31,7 @@ const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount }) 
   return (
     <div className="login">
       <h1>{isCreatingAccount ? 'Create Account' : 'Login'}</h1>
-      {message && <p className={`message ${messageType}`}>{message}</p>}
+      {message && <p className={messageType}>{message}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
