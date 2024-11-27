@@ -2,8 +2,7 @@ import React from "react";
 import "../styles/permission.css";
 
 const Permissions = () => {
-  // Define the permissions array directly inside the component
-  const permissions = ["Read", "Write", "Execute"]; // Example permissions
+  const permissions = ["Read", "Write", "Execute"];
 
   return (
     <div className="permissions">

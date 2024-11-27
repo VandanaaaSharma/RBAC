@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Login.css";
 
-const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount }) => {
+const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount, setUserRole }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,7 +23,9 @@ const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount }) 
       setMessage('Account successfully created!');
       setIsCreatingAccount(false);
     } else {
+      // Simulate login based on user role
       setIsAuthenticated(true);
+      setUserRole('Admin'); // or 'Department'/'Student' based on your logic
       navigate('/dashboard');
     }
   };

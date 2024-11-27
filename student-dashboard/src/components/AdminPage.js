@@ -2,16 +2,14 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Admin.css";
 
-const AdminPage = () => {
+const AdminPage = ({ userRole }) => {
   const navigate = useNavigate();
 
-  const isAuthenticated = true; // Simulated authentication check
-
   useEffect(() => {
-    if (!isAuthenticated) {
-      navigate('/login'); // Redirect if not authenticated
+    if (userRole !== "Admin") {
+      navigate('/login'); // Redirect to login if not Admin
     }
-  }, [isAuthenticated, navigate]);
+  }, [userRole, navigate]);
 
   return (
     <div className="admin-page">
