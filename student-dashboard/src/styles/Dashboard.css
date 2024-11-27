@@ -1,0 +1,38 @@
+.dashboard-container {
+    display: flex;
+  }
+  
+  .dashboard-content {
+    margin-left: 220px;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .navbar {
+    background-color: #55b384;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  .view-button {
+    background-color: #287052;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .view-button:hover {
+    background-color: #83f991;
+  }
+  
