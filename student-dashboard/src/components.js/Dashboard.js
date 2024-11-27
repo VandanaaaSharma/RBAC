@@ -1,27 +1,17 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import'../styles/Dashboard.css'
+import { users, roles } from "../mock/mockApi";
 
 const Dashboard = () => {
-  const username = localStorage.getItem("userRole");
-
-  const handleLogout = () => {
-    localStorage.removeItem("userRole");
-    window.location.href = "/";
-  };
+  const userRole = localStorage.getItem("userRole");
+  const currentUserRole = roles.find((role) => role.name === userRole);
 
   return (
-    <div className="dashboard-container">
-      <Sidebar onLogout={handleLogout} />
-      <div className="dashboard-content">
-        <nav className="navbar">
-          <h1>Welcome, {username}!</h1>
-        </nav>
-        <div className="content">
-          <h2>Dashboard</h2>
-          <button className="view-button">View</button>
-        </div>
-      </div>
+    <div className="dashboard">
+      <h1>
+        Welcome, {localStorage.getItem("username")} ({userRole})
+      </h1>
+      <p>Your Permissions: {currentUserRole.permissions.join(", ")}</p>
+      <button onClick={() => alert("Viewing content!")}>View</button>
     </div>
   );
 };
