@@ -19,9 +19,10 @@ const Sidebar = () => {
       {isOpen && (
         <>
           <ul>
-            <li>Dashboard</li>
-            <li>Users</li>
-            <li>Roles</li>
+            <li onClick={() => navigate("/dashboard")}>Dashboard</li>
+            <li onClick={() => navigate("/users")}>Users</li>
+            <li onClick={() => navigate("/roles")}>Roles</li>
+            <li onClick={() => navigate("/permissions")}>Permissions</li>
           </ul>
           <button className="logout-btn" onClick={handleLogout}>
             Logout

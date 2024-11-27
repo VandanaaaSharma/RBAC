@@ -1,5 +1,5 @@
 import React from "react";
-import { users, roles } from "../API/API";
+import { roles } from "../API/API";
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
