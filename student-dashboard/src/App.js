@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import AdminPage from './components/AdminPage'; // Add this component
+import UserPage from './components/UserPage'; // Add this component
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
-  const [isCreatingAccount, setIsCreatingAccount] = useState(false); // State to toggle between login and create account forms
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
 
   return (
     <Router>
@@ -31,11 +33,17 @@ const App = () => {
             }
           />
 
-          {/* Redirect to dashboard when authenticated */}
+          {/* Dashboard page */}
           <Route
             path="/dashboard"
             element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
           />
+
+          {/* Admin Page */}
+          <Route path="/admin" element={<AdminPage />} />
+
+          {/* User Page */}
+          <Route path="/user" element={<UserPage />} />
         </Routes>
       </div>
     </Router>

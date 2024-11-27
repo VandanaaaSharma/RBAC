@@ -1,26 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../styles/Dashboard.css";
 
 const Dashboard = () => {
-  // Add your onClick handlers or any functionality here
-  const handleClick = (action) => {
-    console.log(action); // Replace with real functionality
+  const navigate = useNavigate(); // Hook for navigation
+
+  // Function to navigate to Admin page
+  const goToAdmin = () => {
+    navigate('/admin'); // Adjust to your desired path
+  };
+
+  // Function to navigate to User page
+  const goToUser = () => {
+    navigate('/user'); // Adjust to your desired path
   };
 
   return (
-    <div className="app">
-      <div className="app__sidebar">
-        <ul>
-          {/* Replace anchor tags with buttons for better accessibility */}
-          <li><button onClick={() => handleClick('Home')}>Home</button></li>
-          <li><button onClick={() => handleClick('Add File')}>Add File</button></li>
-          <li><button onClick={() => handleClick('View Files')}>View Files</button></li>
-          {/* Add more buttons here as needed */}
-        </ul>
-      </div>
-      <div className="app__content">
+    <div className="dashboard">
+      <div className="welcome-box">
         <h1>Welcome to the Dashboard</h1>
-        {/* Additional content and admin/user actions can be here */}
+        <button onClick={goToAdmin} className="button">Admin</button>
+        <button onClick={goToUser} className="button">User</button>
       </div>
     </div>
   );
