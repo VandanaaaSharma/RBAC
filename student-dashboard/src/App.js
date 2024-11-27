@@ -7,7 +7,7 @@ import Dashboard from "./components/Dashboard";
 import Users from "./components/Users";
 import Roles from "./components/Roles";
 import Permissions from "./components/Permissions";
-import mockApi from "../API/API";
+
 
 
 const App = () => {

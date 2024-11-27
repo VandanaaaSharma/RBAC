@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/Users.css';
+// Corrected import: Import the named export (users) instead of default API
+import { users } from "../API/API";
 
 const Users = () => {
   const navigate = useNavigate();
   const [userList, setUserList] = useState([]);
-
   const userRole = localStorage.getItem("userRole");
 
-  if (!userRole) {
-    navigate("/login"); // Redirect if no userRole
-    return null; // Don't render the component if the role is missing
-  }
+  useEffect(() => {
+    if (!userRole) {
+      navigate("/login"); // Redirect if no userRole
+      return;
+    }
 
-  // Add logic for managing the user list here
+    // Set userList with the imported users data
+    setUserList(users); // Assuming 'users' is the array you want to display
+  }, [userRole, navigate]);
 
   return (
     <div className="users">
       <h2>User List</h2>
-      {/* Render user list here */}
+      <ul>
+        {userList.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
     </div>
   );
 };

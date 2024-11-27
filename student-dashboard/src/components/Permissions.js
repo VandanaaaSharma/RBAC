@@ -1,5 +1,5 @@
 import React from "react";
-import { permissions } from "../mock/mockApi";
+import { permissions } from "../API/API";
 
 const Permissions = () => {
   return (

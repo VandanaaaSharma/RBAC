@@ -1,3 +1,5 @@
+// src/API/API.js
+
 export const users = [
   { id: 1, name: "John Doe", role: "Admin", status: "Active" },
   { id: 2, name: "Jane Smith", role: "Department", status: "Inactive" },
@@ -10,6 +12,7 @@ export const users = [
   { id: 9, name: "Chris Evans", role: "Admin", status: "Active" },
 ];
 
+// Export other data as needed
 export const roles = [
   { name: "Admin", permissions: ["Add Users", "Edit Users", "View Roles"] },
   { name: "Department", permissions: ["View Roles"] },
