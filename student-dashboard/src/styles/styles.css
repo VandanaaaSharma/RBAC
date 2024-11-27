@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Light gray background for contrast */
+  }
+  
+  .login {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners for the box */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    width: 300px;
+    text-align: center;
+  }
+  
+  .login h1 {
+    margin-bottom: 20px;
+    color: #287052; /* Login title color */
+  }
+  
+  .login input,
+  .login select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #77ba95; /* Border with secondary color */
+    border-radius: 8px; /* Rounded input fields */
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .login input:focus,
+  .login select:focus {
+    border-color: #287052; /* Focused border color */
+  }
+  
+  .login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #287052; /* Primary button color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login button:hover {
+    background-color: #77ba95; /* Button hover color */
+  }
+  
