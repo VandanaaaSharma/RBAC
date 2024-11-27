@@ -1,10 +1,12 @@
 import React from "react";
-import ErrorBoundary from './components/ErrorBoundary';  // Correct path
-import Users from './components/Users';  // Adjust the path according to your folder structure
-import Roles from './components/Roles';  // Adjust the path accordingly
-import Permissions from './components/Permissions';  // Adjust the path accordingly
-import { Route } from 'react-router-dom';  // Import Route from 'react-router-dom' for routing
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Correct imports
+import ErrorBoundary from "../components/ErrorBoundary"; // Adjusted path for ErrorBoundary
+import Sidebar from "../components/Sidebar"; // Add Sidebar if missing
+import Login from "../components/Login"; // Add Login if missing
+import Dashboard from "../components/Dashboard"; // Add Dashboard if missing
+import Users from "./components/Users"; // Adjust path
+import Roles from "./components/Roles"; // Adjust path
+import Permissions from "./components/Permissions"; // Adjust path
 
 const App = () => {
   return (
