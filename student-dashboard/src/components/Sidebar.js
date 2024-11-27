@@ -1,34 +1,21 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import '../styles/Sidebar.css';
+// Sidebar.js
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
-  };
+  const username = localStorage.getItem("username");
 
   return (
-    <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
-      <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Hide" : "Show"}
-      </button>
-      {isOpen && (
-        <>
-          <ul>
-            <li onClick={() => navigate("/dashboard")}>Dashboard</li>
-            <li onClick={() => navigate("/users")}>Users</li>
-            <li onClick={() => navigate("/roles")}>Roles</li>
-            <li onClick={() => navigate("/permissions")}>Permissions</li>
-          </ul>
-          <button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      )}
+    <div className="sidebar">
+      <div className="sidebar-header">
+        <h3>Welcome, {username}</h3>
+      </div>
+      <ul>
+        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/users">Users</Link></li>
+        <li><Link to="/roles">Roles</Link></li>
+        <li><Link to="/permissions">Permissions</Link></li>
+      </ul>
     </div>
   );
 };

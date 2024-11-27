@@ -1,29 +1,27 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { roles } from "../API/API"; // Assuming this is where roles are defined
-import '../styles/Dashboard.css';
+import React from 'react';
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-  
-  // Retrieve username and userRole from localStorage
-  const username = localStorage.getItem("username");
-  const userRole = localStorage.getItem("userRole");
-
-  // Check if username or userRole is missing and navigate to login if necessary
-  if (!username || !userRole) {
-    navigate("/login");
-    return null; // Don't render the rest of the component if data is missing
-  }
-
-  // Find the current role from the roles list
-  const currentUserRole = roles.find((role) => role.name === userRole);
+  // Add your onClick handlers or any functionality here
+  const handleClick = (action) => {
+    console.log(action); // Replace with real functionality
+  };
 
   return (
-    <div className="dashboard">
-      <h1>Welcome, {username} ({userRole})</h1>
-      <p>Your Permissions: {currentUserRole ? currentUserRole.permissions.join(", ") : "No permissions found"}</p>
-      <button onClick={() => alert("Viewing content!")}>View</button>
+    <div className="app">
+      <div className="app__sidebar">
+        <ul>
+          {/* Replace anchor tags with buttons for better accessibility */}
+          <li><button onClick={() => handleClick('Home')}>Home</button></li>
+          <li><button onClick={() => handleClick('Add File')}>Add File</button></li>
+          <li><button onClick={() => handleClick('View Files')}>View Files</button></li>
+          {/* Add more buttons here as needed */}
+        </ul>
+      </div>
+      <div className="app__content">
+        <h1>Welcome to the Dashboard</h1>
+        {/* Additional content and admin/user actions can be here */}
+      </div>
     </div>
   );
 };

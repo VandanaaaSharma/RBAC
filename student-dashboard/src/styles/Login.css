@@ -1,57 +1,69 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5; /* Light gray background for contrast */
-  }
-  
-  .login {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px; /* Rounded corners for the box */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    width: 300px;
-    text-align: center;
-  }
-  
-  .login h1 {
-    margin-bottom: 20px;
-    color: #287052; /* Login title color */
-  }
-  
-  .login input,
-  .login select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #77ba95; /* Border with secondary color */
-    border-radius: 8px; /* Rounded input fields */
-    outline: none;
-    font-size: 16px;
-  }
-  
-  .login input:focus,
-  .login select:focus {
-    border-color: #287052; /* Focused border color */
-  }
-  
-  .login button {
-    width: 100%;
-    padding: 10px;
-    background-color: #287052; /* Primary button color */
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login button:hover {
-    background-color: #77ba95; /* Button hover color */
-  }
-  
+/* Center the entire page content */
+.login {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full height of the viewport */
+  background-color: #f4f4f4; /* Optional: background color for the page */
+  padding: 0 20px;          /* Optional: to add padding on smaller screens */
+}
+
+/* Box styling for the login form */
+.login form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px; /* Maximum width of the form box */
+  text-align: center; /* Center the text inside the form */
+}
+
+/* Style the title */
+.login h1 {
+  font-size: 24px;
+  color: #287052;
+  margin-bottom: 20px; /* Space between title and input fields */
+}
+
+/* Style input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0; /* Space between the inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the submit button */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #287052;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 0; /* Space between button and input fields */
+}
+
+button:hover {
+  background-color: #77ba95;
+}
+
+/* Style the "Create Account" link */
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Style the "Create Account" text */
+p a {
+  color: #287052;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
