@@ -20,9 +20,14 @@ Project Structure
 │   │   ├── Dashboard.js
 │   │   ├── Login.js
 │   │   ├── UserPage.js
+│   │   ├── Permissions.js
+│   │   ├── Users.js
+│   │   ├── Role.js
+│   │   ├── ErrorBoundary.js
 │   ├── App.js
 │   └── styles/
 │       └── Login.css
+│       └── Dashboard.css
 ├── package.json
 └── README.md
 
