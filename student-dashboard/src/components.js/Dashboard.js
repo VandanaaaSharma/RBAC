@@ -1,5 +1,6 @@
 import React from "react";
-import { users, roles } from "../mock/mockApi";
+import { users, roles } from "../API/API";
+import '../styles/Dashboard.css';
 
 const Dashboard = () => {
   const userRole = localStorage.getItem("userRole");
