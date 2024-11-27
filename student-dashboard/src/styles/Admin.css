@@ -1,0 +1,59 @@
+/* General styling for AdminPage */
+.admin-page {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6f5e6; /* Entire page background - green */
+    color: white; /* White text for better contrast */
+    position: relative; /* For logout button positioning */
+  }
+  
+  /* Logout button styling */
+  .logout-btn-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logout-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Reduced size */
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  .logout-btn:hover {
+    background-color: darkred;
+  }
+  
+  /* Action boxes styling */
+  .action-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased space between buttons */
+  }
+  
+  .action-box {
+    background-color: #096e44; /* Light green for the buttons */
+    color: white;
+    padding: 30px 50px; /* Larger size for better appearance */
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+  }
+  
+  .action-box:hover {
+    background-color: #043521; /* Darker green on hover */
+  }
+  
