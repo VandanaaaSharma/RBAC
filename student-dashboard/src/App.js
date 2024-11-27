@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Correct imports
-import ErrorBoundary from "../components/ErrorBoundary"; // Adjusted path for ErrorBoundary
-import Sidebar from "../components/Sidebar"; // Add Sidebar if missing
-import Login from "../components/Login"; // Add Login if missing
-import Dashboard from "../components/Dashboard"; // Add Dashboard if missing
-import Users from "./components/Users"; // Adjust path
-import Roles from "./components/Roles"; // Adjust path
-import Permissions from "./components/Permissions"; // Adjust path
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Sidebar from "./components/Sidebar";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Users from "./components/Users";
+import Roles from "./components/Roles";
+import Permissions from "./components/Permissions";
+import mockApi from "../API/API";
+
 
 const App = () => {
   return (
