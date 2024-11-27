@@ -1,26 +1,10 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import "../styles/UserPage.css";
+import React from 'react';
 
-const UserPage = ({ userRole }) => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (userRole !== "Student") {
-      navigate('/login'); // Redirect to login if not Student
-    }
-  }, [userRole, navigate]);
-
+const UserPage = () => {
   return (
-    <div className="user-page">
-      <div className="logout-btn-box">
-        <button className="logout-btn" onClick={() => navigate('/login')}>Logout</button>
-      </div>
-      <div className="action-boxes">
-        <div className="action-box" onClick={() => console.log('View')}>View</div>
-        <div className="action-box" onClick={() => console.log('Add')}>Add</div>
-        <div className="action-box" onClick={() => console.log('Delete')}>Delete</div>
-      </div>
+    <div>
+      <h1>Welcome to the User Page</h1>
+      <p>This page is only accessible by regular users.</p>
     </div>
   );
 };

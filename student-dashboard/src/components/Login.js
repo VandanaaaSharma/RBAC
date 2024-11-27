@@ -1,60 +1,60 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../styles/Login.css";
+import '../styles/Login.css';
 
-const Login = ({ setIsAuthenticated, setIsCreatingAccount, isCreatingAccount, setUserRole }) => {
-  const [username, setUsername] = useState('');
+const Login = ({ setIsAuthenticated, setUserRole }) => {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');
-
+  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if (isCreatingAccount) {
-      if (password !== confirmPassword) {
-        setMessageType('error');
-        setMessage('Passwords do not match');
-        return;
-      }
-      setMessageType('success');
-      setMessage('Account successfully created!');
+      // Create account logic (just simulate here)
       setIsCreatingAccount(false);
+      alert('Account created successfully!');
+      // Optionally, you could navigate to login after account creation
     } else {
-      // Simulate login based on user role
-      setIsAuthenticated(true);
-      setUserRole('Admin'); // or 'Department'/'Student' based on your logic
-      navigate('/dashboard');
+      if (email === 'admin@example.com' && password === 'admin123') {
+        setIsAuthenticated(true);
+        setUserRole('admin');
+        navigate('/dashboard'); // Redirect to dashboard after successful login
+      } else if (email === 'user@example.com' && password === 'user123') {
+        setIsAuthenticated(true);
+        setUserRole('user');
+        navigate('/dashboard'); // Redirect to dashboard after successful login
+      } else {
+        alert('Invalid login credentials');
+      }
     }
   };
 
   return (
-    <div className="login">
-      <h1>{isCreatingAccount ? 'Create Account' : 'Login'}</h1>
-      {message && <p className={messageType}>{message}</p>}
+    <div className="login-page">
+      <h2>{isCreatingAccount ? 'Create Account' : 'Login'}</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {isCreatingAccount && (
+        <div className="input-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label htmlFor="password">Password</label>
           <input
             type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
-        )}
+        </div>
         <button type="submit">{isCreatingAccount ? 'Create Account' : 'Login'}</button>
       </form>
       {!isCreatingAccount ? (

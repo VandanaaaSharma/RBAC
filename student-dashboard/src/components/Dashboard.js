@@ -1,16 +1,29 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../styles/Dashboard.css";
+import "../styles/Dashboard.css"
 
-const Dashboard = () => {
+const Dashboard = ({ userRole }) => {
   const navigate = useNavigate();
 
+  const handleNavigate = (role) => {
+    if (role === 'admin') {
+      navigate('/admin'); // Go to Admin Page
+    } else if (role === 'user') {
+      navigate('/user'); // Go to User Page
+    }
+  };
+
   return (
-    <div className="dashboard">
-      <div className="welcome-box">
-        <h1>Welcome to the Dashboard</h1>
-        <button onClick={() => navigate('/admin')} className="button">Admin</button>
-        <button onClick={() => navigate('/user')} className="button">User</button>
+    <div>
+      <h1>Dashboard</h1>
+      <p>Welcome to your Dashboard</p>
+      <div className="role-buttons">
+        {userRole === 'admin' && (
+          <button onClick={() => handleNavigate('admin')}>Go to Admin Page</button>
+        )}
+        {userRole === 'user' && (
+          <button onClick={() => handleNavigate('user')}>Go to User Page</button>
+        )}
       </div>
     </div>
   );

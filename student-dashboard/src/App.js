@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-import AdminPage from './components/AdminPage'; // Admin page
-import UserPage from './components/UserPage'; // User page
+import AdminPage from './components/AdminPage';
+import UserPage from './components/UserPage';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
-  const [userRole, setUserRole] = useState(''); // Assuming role is set after login
+  const [userRole, setUserRole] = useState(''); // Track if user is admin or user
 
   return (
     <Router>
@@ -20,9 +19,7 @@ const App = () => {
             element={
               <Login
                 setIsAuthenticated={setIsAuthenticated}
-                setIsCreatingAccount={setIsCreatingAccount}
-                isCreatingAccount={isCreatingAccount}
-                setUserRole={setUserRole} // Set role after successful login
+                setUserRole={setUserRole}
               />
             }
           />
@@ -30,19 +27,25 @@ const App = () => {
           {/* Dashboard page */}
           <Route
             path="/dashboard"
-            element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />}
+            element={
+              isAuthenticated ? <Dashboard userRole={userRole} /> : <Navigate to="/" />
+            }
           />
 
-          {/* Admin Page, only accessible by admins */}
+          {/* Admin Page */}
           <Route
             path="/admin"
-            element={isAuthenticated && userRole === 'admin' ? <AdminPage /> : <Navigate to="/" />}
+            element={
+              isAuthenticated && userRole === 'admin' ? <AdminPage /> : <Navigate to="/" />
+            }
           />
 
-          {/* User Page, only accessible by normal users */}
+          {/* User Page */}
           <Route
             path="/user"
-            element={isAuthenticated && userRole === 'user' ? <UserPage /> : <Navigate to="/" />}
+            element={
+              isAuthenticated && userRole === 'user' ? <UserPage /> : <Navigate to="/" />
+            }
           />
         </Routes>
       </div>
