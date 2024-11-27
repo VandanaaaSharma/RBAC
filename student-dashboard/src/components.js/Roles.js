@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { roles, permissions } from "../mock/mockApi";
+import { roles, permissions } from "../API/API";
 
 const Roles = () => {
   const [roleList, setRoleList] = useState(roles);
